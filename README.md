@@ -1,4 +1,4 @@
-# Mathematics in Go
+# Mathematics in Go [![CircleCI](https://circleci.com/gh/marpaia/math-go/tree/master.svg?style=svg&circle-token=07906e84b293e18c892eccc2680a545094323dc4)](https://circleci.com/gh/marpaia/math-go/tree/master)
 
 This repository is a Go library for performing a wide range of mathematical programming tasks.
 

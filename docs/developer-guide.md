@@ -77,6 +77,16 @@ Or with the `go` command:
 go test ./calculus/...
 ```
 
+### Running A Full CI Build Locally
+
+The CircleCI configuration includes a number of lint and test steps. If you'd like to run a complete, representative CI build locally, download the `circleci` CLI tool. See the [official installation instructions](https://circleci.com/docs/2.0/local-cli/#installing-the-circleci-local-cli-on-macos-and-linux-distros) for download information.
+
+Once you have the tool installed in your path, run the following from the root of the repository:
+
+```
+circleci build
+```
+
 ## Develop
 
 ### Bazel Configurations
@@ -96,7 +106,6 @@ Bazel manages all dependencies internally with individual `go_repository` stanza
 ```
 bazel run //:gazelle -- update-repos -from_file=go.mod
 ```
-
 #### Formatting Configs
 
 To format all Bazel `BUILD` files using [`buildifier`](https://github.com/bazelbuild/buildtools/tree/master/buildifier), run the following:
