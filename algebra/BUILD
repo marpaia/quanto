@@ -14,5 +14,5 @@ go_test(
     name = "go_default_test",
     srcs = ["algebra_test.go"],
     embed = [":go_default_library"],
-    deps = ["//internal/assert:go_default_library"],
+    deps = ["@com_github_stretchr_testify//assert:go_default_library"],
 )
