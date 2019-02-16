@@ -1,6 +1,6 @@
-# Developer Guide
+# Contributor Guide
 
-The developer guide has the following sections:
+The contributor guide has the following sections:
 
 - [Setup](#setup)
 - [Build](#build)

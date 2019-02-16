@@ -7,11 +7,13 @@ See the following sections of this document for more information:
 - [Introduction](#introduction)
 - [Features](#features)
   - [Multivariable Expression Algebraic Operations](#multivariable-expression-algebraic-operations)
+  - [Vector Arithmetic](#vector-arithmetic)
+  - [Center of Curvature](#center-of-curvature)
 
-In addition, here are some other documents that may be helpful:
+In addition, here are some other documents and links that may be helpful:
 
-- [Documentation](./docs/README.md)
-- [Developer Guide](./docs/developer-guide.md)
+- For development information, see the [Contributor Guide](./CONTRIBUTING.md)
+- If you would like to file a bug or request a feature, please file a [GitHub Issue](https://github.com/marpaia/math-go/issues/new)
 
 ## Introduction
 
