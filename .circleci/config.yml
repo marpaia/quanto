@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: l.gcr.io/google/bazel:0.21.0
+      - image: l.gcr.io/google/bazel:0.22.0
     working_directory: /quanto
     steps: &steps
       - checkout
