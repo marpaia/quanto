@@ -6,7 +6,7 @@ go_library(
         "algebra.go",
         "arithmetic.go",
     ],
-    importpath = "github.com/marpaia/math-go/algebra",
+    importpath = "github.com/marpaia/quanto/algebra",
     visibility = ["//visibility:public"],
 )
 

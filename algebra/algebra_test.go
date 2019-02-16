@@ -3,8 +3,8 @@ package algebra_test
 import (
 	"testing"
 
-	"github.com/marpaia/math-go/algebra"
-	"github.com/marpaia/math-go/internal/assert"
+	"github.com/marpaia/quanto/algebra"
+	"github.com/marpaia/quanto/internal/assert"
 )
 
 func TestSimplifyMultivariableExpression(t *testing.T) {

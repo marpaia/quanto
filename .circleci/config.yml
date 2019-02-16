@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: l.gcr.io/google/bazel:0.21.0
-    working_directory: /math-go
+    working_directory: /quanto
     steps: &steps
       - checkout
       - run: bazel build ...

@@ -1,4 +1,4 @@
-workspace(name = "com_github_marpaia_math_go")
+workspace(name = "com_github_quanto_quanto")
 
 ################################################################################
 # General Initialization

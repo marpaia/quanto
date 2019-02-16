@@ -3,7 +3,7 @@ package vector_test
 import (
 	"testing"
 
-	"github.com/marpaia/math-go/vector"
+	"github.com/marpaia/quanto/vector"
 )
 
 func TestMagnitude(t *testing.T) {

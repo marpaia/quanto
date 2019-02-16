@@ -12,7 +12,7 @@ The contributor guide has the following sections:
 To get your development environment setup, you first must clone the source repository:
 
 ```
-git clone git@github.com:marpaia/math-go.git
+git clone git@github.com:marpaia/quanto.git
 ```
 
 To build and test the code, it is required to have the following minimal toolset installed:

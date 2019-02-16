@@ -1,6 +1,6 @@
-# Mathematics in Go [![CircleCI](https://circleci.com/gh/marpaia/math-go/tree/master.svg?style=svg&circle-token=07906e84b293e18c892eccc2680a545094323dc4)](https://circleci.com/gh/marpaia/math-go/tree/master)
+# Quanto [![CircleCI](https://circleci.com/gh/marpaia/quanto.svg?style=svg&circle-token=07906e84b293e18c892eccc2680a545094323dc4)](https://circleci.com/gh/marpaia/quanto)
 
-This repository is a Go library for performing a wide range of mathematical programming tasks.
+Quanto is a Go library for performing a wide range of mathematical programming tasks.
 
 See the following sections of this document for more information:
 
@@ -13,7 +13,7 @@ See the following sections of this document for more information:
 In addition, here are some other documents and links that may be helpful:
 
 - For development information, see the [Contributor Guide](./CONTRIBUTING.md)
-- If you would like to file a bug or request a feature, please file a [GitHub Issue](https://github.com/marpaia/math-go/issues/new)
+- If you would like to file a bug or request a feature, please file a [GitHub Issue](https://github.com/marpaia/quanto/issues/new)
 
 ## Introduction
 
@@ -37,7 +37,7 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/marpaia/math-go/algebra"
+	"github.com/marpaia/quanto/algebra"
 )
 
 func main() {
@@ -77,7 +77,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/marpaia/math-go/vector"
+	"github.com/marpaia/quanto/vector"
 )
 
 func main() {
@@ -125,7 +125,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/marpaia/math-go/vector"
+	"github.com/marpaia/quanto/vector"
 )
 
 func main() {

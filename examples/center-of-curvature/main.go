@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/marpaia/math-go/vector"
+	"github.com/marpaia/quanto/vector"
 )
 
 func main() {

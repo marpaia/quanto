@@ -5,7 +5,7 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/marpaia/math-go/algebra"
+	"github.com/marpaia/quanto/algebra"
 )
 
 func main() {
