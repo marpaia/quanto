@@ -5,7 +5,10 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/marpaia/quanto/examples/center-of-curvature",
     visibility = ["//visibility:private"],
-    deps = ["//vector:go_default_library"],
+    deps = [
+        "//geometry:go_default_library",
+        "//vector:go_default_library",
+    ],
 )
 
 go_binary(

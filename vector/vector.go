@@ -87,37 +87,3 @@ func CrossProduct(lhs Vector, rhs Vector) Vector {
 		K: lhs.I*rhs.J - lhs.J*rhs.I,
 	}
 }
-
-// CenterOfCurvature calculates the coordinates of the center of curvature given
-// the position, velocity and acceleration of a kinematic point.
-//
-// r is the position of a particle in meters
-// v is the velocity of a particle in meters per second
-// a is the acceleration of a particle in meters per second squared
-func CenterOfCurvature(r Vector, v Vector, a Vector) Vector {
-	vMagnitude := Magnitude(v)
-	vCrossA := CrossProduct(v, a)
-	vCrossAMagnitude := Magnitude(vCrossA)
-
-	unitTangentVector := Vector{
-		I: v.I / vMagnitude,
-		J: v.J / vMagnitude,
-		K: v.K / vMagnitude,
-	}
-
-	unitBinormalVector := Vector{
-		I: vCrossA.I / vCrossAMagnitude,
-		J: vCrossA.J / vCrossAMagnitude,
-		K: vCrossA.K / vCrossAMagnitude,
-	}
-
-	unitPrincipalNormalVector := CrossProduct(unitBinormalVector, unitTangentVector)
-
-	radiusOfCurvature := math.Pow(vMagnitude, 2) / Project(a, unitPrincipalNormalVector)
-
-	return Vector{
-		I: r.I + radiusOfCurvature*unitPrincipalNormalVector.I,
-		J: r.J + radiusOfCurvature*unitPrincipalNormalVector.J,
-		K: r.K + radiusOfCurvature*unitPrincipalNormalVector.K,
-	}
-}

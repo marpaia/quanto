@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/marpaia/quanto/geometry"
 	"github.com/marpaia/quanto/vector"
 )
 
@@ -16,6 +17,6 @@ func main() {
 	// the acceleration of the particle in meters per second squared
 	a := vector.Vector{16, 125, 30}
 
-	coc := vector.CenterOfCurvature(r, v, a)
+	coc := geometry.CenterOfCurvature(r, v, a)
 	fmt.Printf("the center of curvature is %+v\n", coc)
 }
