@@ -12,7 +12,7 @@ type Expression struct {
 	coefficient float64
 }
 
-// MultivariableSymbol is a mathematical expression like 10(x^2)(y^3)
+// MultivariableExpression is a mathematical expression like 10(x^2)(y^3)
 type MultivariableExpression struct {
 	expressions []Expression
 	coefficient float64
