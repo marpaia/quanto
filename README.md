@@ -1,6 +1,6 @@
 # Quanto [![CircleCI](https://circleci.com/gh/marpaia/quanto.svg?style=svg&circle-token=07906e84b293e18c892eccc2680a545094323dc4)](https://circleci.com/gh/marpaia/quanto)
 
-Quanto is a Go library for performing a wide range of mathematical programming tasks.
+Quanto is a Go library for performing mathematical programming tasks.
 
 See the following sections of this document for more information:
 
