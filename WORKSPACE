@@ -53,27 +53,3 @@ gazelle_dependencies()
 # based on the `go.mod` file. For that reason, this section should always be at
 # the end of this file.
 ################################################################################
-
-go_repository(
-    name = "com_github_davecgh_go_spew",
-    importpath = "github.com/davecgh/go-spew",
-    tag = "v1.1.0",
-)
-
-go_repository(
-    name = "com_github_pmezard_go_difflib",
-    importpath = "github.com/pmezard/go-difflib",
-    tag = "v1.0.0",
-)
-
-go_repository(
-    name = "com_github_stretchr_objx",
-    importpath = "github.com/stretchr/objx",
-    tag = "v0.1.0",
-)
-
-go_repository(
-    name = "com_github_stretchr_testify",
-    importpath = "github.com/stretchr/testify",
-    tag = "v1.3.0",
-)
