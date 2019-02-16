@@ -66,3 +66,84 @@ This will print:
 ```
 5x^2 * 2y^3 = 10(x^2)(y^3)
 ```
+
+### Vector Arithmetic
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/marpaia/math-go/vector"
+)
+
+func main() {
+	lhs := vector.Vector{1, 6, 18}
+	rhs := vector.Vector{4, 2, 1}
+
+	fmt.Printf("the magnitude of lhs is %f\n", lhs.Magnitude())
+	fmt.Printf("the magnitude of rhs is %f\n", rhs.Magnitude())
+
+	fmt.Printf("the unit vector of lhs is %+v\n", lhs.UnitVector())
+	fmt.Printf("the unit vector of rhs is %+v\n", rhs.UnitVector())
+
+	cross := vector.CrossProduct(lhs, rhs)
+	fmt.Printf("lhs cross rhs is %+v\n", cross)
+
+	dot := vector.DotProduct(lhs, rhs)
+	fmt.Printf("lhs dot rhs is %+v\n", dot)
+
+	projection := vector.Project(lhs, rhs)
+	fmt.Printf("the magnitude of the projection of lhs in the direction of rhs is %f\n", projection)
+
+	angle := vector.AngleDegrees(lhs, rhs)
+	fmt.Printf("the angle between lhs and rhs is %d degrees\n", int(angle))
+}
+```
+
+This will print:
+
+```
+the magnitude of lhs is 19.000000
+the magnitude of rhs is 4.582576
+the unit vector of lhs is {I:0.05263157894736842 J:0.3157894736842105 K:0.9473684210526315}
+the unit vector of rhs is {I:0.8728715609439696 J:0.4364357804719848 K:0.2182178902359924}
+lhs cross rhs is {I:-30 J:71 K:-22}
+lhs dot rhs is 34
+the magnitude of the projection of lhs in the direction of rhs is 7.419408
+the angle between lhs and rhs is 67 degrees
+```
+
+### Center of Curvature
+
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/marpaia/math-go/vector"
+)
+
+func main() {
+	// the position of the particle in meters
+	r := vector.Vector{250, 630, 430}
+
+	// the velocity of the particle in meters per second
+	v := vector.Vector{90, 125, 170}
+
+	// the acceleration of the particle in meters per second squared
+	a := vector.Vector{16, 125, 30}
+
+	coc := vector.CenterOfCurvature(r, v, a)
+	fmt.Printf("the center of curvature is %+v\n", coc)
+}
+
+```
+
+This will print:
+
+```
+the center of curvature is {I:95.15892343003512 J:1141.3912469446514 K:135.95171190126717}
+```
