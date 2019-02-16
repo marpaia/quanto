@@ -8,14 +8,14 @@ import (
 
 func TestMagnitude(t *testing.T) {
 	v := vector.Vector{1, -4, 8}
-	if m := v.Magnitude(); m != 9 {
+	if m := vector.Magnitude(v); m != 9 {
 		t.Fatalf("magnitude should be 9, got %f", m)
 	}
 }
 
 func TestUnitVector(t *testing.T) {
 	v := vector.Vector{1, -4, 8}
-	u := v.UnitVector()
+	u := vector.UnitVector(v)
 	if u.I != (float64(1) / float64(9)) {
 		t.Fatalf("u.I should be 1/9 but it is %f", u.I)
 	}
@@ -29,7 +29,7 @@ func TestUnitVector(t *testing.T) {
 
 func TestDirection(t *testing.T) {
 	v := vector.Vector{1, -4, 8}
-	d := v.DirectionDegrees()
+	d := vector.DirectionDegrees(v)
 	if int(d.X) != 83 {
 		t.Fatalf("d.X should be 83 but it is %d", int(d.X))
 	}

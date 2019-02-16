@@ -20,14 +20,14 @@ type Direction struct {
 }
 
 // Magnitude represents the vector displacement of point from the origin.
-func (v Vector) Magnitude() float64 {
+func Magnitude(v Vector) float64 {
 	return math.Sqrt(math.Pow(v.I, 2) + math.Pow(v.J, 2) + math.Pow(v.K, 2))
 }
 
 // UnitVector returns a vector in the same direction as v, but with a magnitude
 // of 1.
-func (v Vector) UnitVector() Vector {
-	magnitude := v.Magnitude()
+func UnitVector(v Vector) Vector {
+	magnitude := Magnitude(v)
 	return Vector{
 		I: v.I * (1 / magnitude),
 		J: v.J * (1 / magnitude),
@@ -36,8 +36,8 @@ func (v Vector) UnitVector() Vector {
 }
 
 // DirectionRadians calculates the angles of a given vector in radians.
-func (v Vector) DirectionRadians() Direction {
-	magnitude := v.Magnitude()
+func DirectionRadians(v Vector) Direction {
+	magnitude := Magnitude(v)
 	return Direction{
 		X: math.Acos(v.I / magnitude),
 		Y: math.Acos(v.J / magnitude),
@@ -46,8 +46,8 @@ func (v Vector) DirectionRadians() Direction {
 }
 
 // DirectionDegrees calculates the angles of a given vector in degrees.
-func (v Vector) DirectionDegrees() Direction {
-	directionDegrees := v.DirectionRadians()
+func DirectionDegrees(v Vector) Direction {
+	directionDegrees := DirectionRadians(v)
 	return Direction{
 		X: directionDegrees.X * (180 / math.Pi),
 		Y: directionDegrees.Y * (180 / math.Pi),
@@ -62,7 +62,7 @@ func AngleDegrees(lhs Vector, rhs Vector) float64 {
 
 // AngleRadians calculuates the andgle between the two given vectors in radiaans.
 func AngleRadians(lhs Vector, rhs Vector) float64 {
-	return math.Acos(DotProduct(lhs, rhs) / (lhs.Magnitude() * rhs.Magnitude()))
+	return math.Acos(DotProduct(lhs, rhs) / (Magnitude(lhs) * Magnitude(rhs)))
 }
 
 // DotProduct is is an algebraic operation that takes two equal-length sequences
@@ -74,7 +74,7 @@ func DotProduct(lhs Vector, rhs Vector) float64 {
 // Project calculates the magnitude of the projection of lhs in the direction of
 // rhs.
 func Project(lhs Vector, rhs Vector) float64 {
-	return DotProduct(lhs, rhs) / rhs.Magnitude()
+	return DotProduct(lhs, rhs) / Magnitude(rhs)
 }
 
 // CrossProduct is a binary operation on two vectors in three-dimensional space.
@@ -95,9 +95,9 @@ func CrossProduct(lhs Vector, rhs Vector) Vector {
 // v is the velocity of a particle in meters per second
 // a is the acceleration of a particle in meters per second squared
 func CenterOfCurvature(r Vector, v Vector, a Vector) Vector {
-	vMagnitude := v.Magnitude()
+	vMagnitude := Magnitude(v)
 	vCrossA := CrossProduct(v, a)
-	vCrossAMagnitude := vCrossA.Magnitude()
+	vCrossAMagnitude := Magnitude(vCrossA)
 
 	unitTangentVector := Vector{
 		I: v.I / vMagnitude,

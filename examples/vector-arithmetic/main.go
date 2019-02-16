@@ -10,11 +10,11 @@ func main() {
 	lhs := vector.Vector{1, 6, 18}
 	rhs := vector.Vector{4, 2, 1}
 
-	fmt.Printf("the magnitude of lhs is %f\n", lhs.Magnitude())
-	fmt.Printf("the magnitude of rhs is %f\n", rhs.Magnitude())
+	fmt.Printf("the magnitude of lhs is %f\n", vector.Magnitude(lhs))
+	fmt.Printf("the magnitude of rhs is %f\n", vector.Magnitude(rhs))
 
-	fmt.Printf("the unit vector of lhs is %+v\n", lhs.UnitVector())
-	fmt.Printf("the unit vector of rhs is %+v\n", rhs.UnitVector())
+	fmt.Printf("the unit vector of lhs is %+v\n", vector.UnitVector(lhs))
+	fmt.Printf("the unit vector of rhs is %+v\n", vector.UnitVector(rhs))
 
 	cross := vector.CrossProduct(lhs, rhs)
 	fmt.Printf("lhs cross rhs is %+v\n", cross)
