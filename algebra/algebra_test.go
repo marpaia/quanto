@@ -4,8 +4,7 @@ import (
 	"testing"
 
 	"github.com/marpaia/math-go/algebra"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
+	"github.com/marpaia/math-go/internal/assert"
 )
 
 func TestSimplifyMultivariableExpression(t *testing.T) {
@@ -19,7 +18,9 @@ func TestSimplifyMultivariableExpression(t *testing.T) {
 		algebra.NewSymbol("y").Power(3),
 	).Coefficient(10)
 
-	assert.Equal(t, tenXSquaredYCubedSimplified, tenXSquaredYCubed.Simplify())
+	if err := assert.Equal(tenXSquaredYCubedSimplified, tenXSquaredYCubed.Simplify()); err != nil {
+		t.Fatal(err)
+	}
 }
 
 func TestExpressionArithmetic(t *testing.T) {
@@ -32,12 +33,20 @@ func TestExpressionArithmetic(t *testing.T) {
 	).Coefficient(10)
 
 	product1, err := algebra.Mul(fiveXSquared, twoYCubed)
-	require.NoError(t, err)
-	assert.Equal(t, tenXSquaredYCubed.Simplify(), product1.Simplify())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := assert.Equal(tenXSquaredYCubed.Simplify(), product1.Simplify()); err != nil {
+		t.Fatal(err)
+	}
 
 	twentyfiveXFourth := algebra.NewSymbol("x").Power(4).Coefficient(25).MultivariableExpression()
 
 	product2, err := algebra.Mul(fiveXSquared, fiveXSquared)
-	require.NoError(t, err)
-	assert.Equal(t, twentyfiveXFourth.Simplify(), product2.Simplify())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := assert.Equal(twentyfiveXFourth.Simplify(), product2.Simplify()); err != nil {
+		t.Fatal(err)
+	}
 }
