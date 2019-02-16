@@ -9,8 +9,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    strip_prefix = "buildtools-0.20.0",
-    url = "https://github.com/bazelbuild/buildtools/archive/0.20.0.zip",
+    strip_prefix = "buildtools-0.22.0",
+    url = "https://github.com/bazelbuild/buildtools/archive/0.22.0.zip",
 )
 
 load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
@@ -24,11 +24,11 @@ buildifier_dependencies()
 # Download, load, and initialize the Go build rules.
 http_archive(
     name = "io_bazel_rules_go",
-    strip_prefix = "rules_go-0.16.6",
-    urls = ["https://github.com/bazelbuild/rules_go/archive/0.16.6.zip"],
+    strip_prefix = "rules_go-0.17.0",
+    urls = ["https://github.com/bazelbuild/rules_go/archive/0.17.0.zip"],
 )
 
-load("@io_bazel_rules_go//go:def.bzl", "go_register_toolchains", "go_rules_dependencies")
+load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
 go_rules_dependencies()
 
