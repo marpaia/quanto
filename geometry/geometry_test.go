@@ -8,9 +8,9 @@ import (
 )
 
 func TestCenterOfCurvature(t *testing.T) {
-	r := vector.Vector{250, 630, 430}
-	v := vector.Vector{90, 125, 170}
-	a := vector.Vector{16, 125, 30}
+	r := vector.Vector{I: 250, J: 630, K: 430}
+	v := vector.Vector{I: 90, J: 125, K: 170}
+	a := vector.Vector{I: 16, J: 125, K: 30}
 
 	coc := geometry.CenterOfCurvature(r, v, a)
 

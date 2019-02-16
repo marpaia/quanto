@@ -81,8 +81,8 @@ import (
 )
 
 func main() {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{4, 2, 1}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 4, J: 2, K: 1}
 
 	fmt.Printf("the magnitude of lhs is %f\n", vector.Magnitude(lhs))
 	fmt.Printf("the magnitude of rhs is %f\n", vector.Magnitude(rhs))
@@ -102,6 +102,7 @@ func main() {
 	angle := vector.AngleDegrees(lhs, rhs)
 	fmt.Printf("the angle between lhs and rhs is %d degrees\n", int(angle))
 }
+
 ```
 
 This will print:
@@ -131,13 +132,13 @@ import (
 
 func main() {
 	// the position of the particle in meters
-	r := vector.Vector{250, 630, 430}
+	r := vector.Vector{I: 250, J: 630, K: 430}
 
 	// the velocity of the particle in meters per second
-	v := vector.Vector{90, 125, 170}
+	v := vector.Vector{I: 90, J: 125, K: 170}
 
 	// the acceleration of the particle in meters per second squared
-	a := vector.Vector{16, 125, 30}
+	a := vector.Vector{I: 16, J: 125, K: 30}
 
 	coc := geometry.CenterOfCurvature(r, v, a)
 	fmt.Printf("the center of curvature is %+v\n", coc)

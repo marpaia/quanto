@@ -9,13 +9,13 @@ import (
 
 func main() {
 	// the position of the particle in meters
-	r := vector.Vector{250, 630, 430}
+	r := vector.Vector{I: 250, J: 630, K: 430}
 
 	// the velocity of the particle in meters per second
-	v := vector.Vector{90, 125, 170}
+	v := vector.Vector{I: 90, J: 125, K: 170}
 
 	// the acceleration of the particle in meters per second squared
-	a := vector.Vector{16, 125, 30}
+	a := vector.Vector{I: 16, J: 125, K: 30}
 
 	coc := geometry.CenterOfCurvature(r, v, a)
 	fmt.Printf("the center of curvature is %+v\n", coc)

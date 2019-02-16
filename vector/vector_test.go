@@ -7,14 +7,14 @@ import (
 )
 
 func TestMagnitude(t *testing.T) {
-	v := vector.Vector{1, -4, 8}
+	v := vector.Vector{I: 1, J: -4, K: 8}
 	if m := vector.Magnitude(v); m != 9 {
 		t.Fatalf("magnitude should be 9, got %f", m)
 	}
 }
 
 func TestUnitVector(t *testing.T) {
-	v := vector.Vector{1, -4, 8}
+	v := vector.Vector{I: 1, J: -4, K: 8}
 	u := vector.UnitVector(v)
 	if u.I != (float64(1) / float64(9)) {
 		t.Fatalf("u.I should be 1/9 but it is %f", u.I)
@@ -28,7 +28,7 @@ func TestUnitVector(t *testing.T) {
 }
 
 func TestDirection(t *testing.T) {
-	v := vector.Vector{1, -4, 8}
+	v := vector.Vector{I: 1, J: -4, K: 8}
 	d := vector.DirectionDegrees(v)
 	if int(d.X) != 83 {
 		t.Fatalf("d.X should be 83 but it is %d", int(d.X))
@@ -42,8 +42,8 @@ func TestDirection(t *testing.T) {
 }
 
 func TestDotProduct(t *testing.T) {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{42, -69, 98}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 42, J: -69, K: 98}
 	dot := vector.DotProduct(lhs, rhs)
 	if dot != 1392 {
 		t.Fatalf("expected dot product to be 1392 but it is %f", dot)
@@ -51,8 +51,8 @@ func TestDotProduct(t *testing.T) {
 }
 
 func TestAngle(t *testing.T) {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{42, -69, 98}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 42, J: -69, K: 98}
 	angle := vector.AngleDegrees(lhs, rhs)
 	if int(angle) != 54 {
 		t.Fatalf("expected angle to be 54 but it is %d", int(angle))
@@ -60,8 +60,8 @@ func TestAngle(t *testing.T) {
 }
 
 func TestProjection(t *testing.T) {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{42, -69, 98}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 42, J: -69, K: 98}
 	projection := vector.Project(lhs, rhs)
 	if int(projection) != 10 {
 		t.Fatalf("expected projection to be 10 but it is %d", int(projection))
@@ -69,8 +69,8 @@ func TestProjection(t *testing.T) {
 }
 
 func TestCrossProduct(t *testing.T) {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{4, 2, 1}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 4, J: 2, K: 1}
 	cross := vector.CrossProduct(lhs, rhs)
 	if cross.I != -30 {
 		t.Fatalf("expected cross.I to be -30 but it is %f", cross.I)

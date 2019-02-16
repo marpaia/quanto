@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	lhs := vector.Vector{1, 6, 18}
-	rhs := vector.Vector{4, 2, 1}
+	lhs := vector.Vector{I: 1, J: 6, K: 18}
+	rhs := vector.Vector{I: 4, J: 2, K: 1}
 
 	fmt.Printf("the magnitude of lhs is %f\n", vector.Magnitude(lhs))
 	fmt.Printf("the magnitude of rhs is %f\n", vector.Magnitude(rhs))
